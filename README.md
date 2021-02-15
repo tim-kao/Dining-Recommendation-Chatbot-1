@@ -10,7 +10,7 @@
 ### Architecture
 
 ### Description
-##### 1) S3(https://s3.console.aws.amazon.com/s3/)
+##### 1) [S3](https://s3.console.aws.amazon.com/s3/)
 #####    - Store the frontend files.
 #####    - Generate SDK from AWS API Gateway and store it into js folder.
 #####    - chat.js file needs modification.
