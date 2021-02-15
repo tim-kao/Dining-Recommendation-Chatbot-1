@@ -11,4 +11,24 @@
 
 ### Description
 ##### 1) S3
-####### - 
+#####    - Store the frontend files.
+#####    - Generate SDK from AWS API Gateway and store it into js folder.
+#####    - chat.js file needs modification.
+#####    - Create CORS policy.
+##### 2) API Gateway
+#####    - Create a new API by importing swagger API.
+#####    - Set POST method abd integrate Lambda function LF0 with it.
+#####    - Set OPTIONS method with HTTP status 200.
+#####    - Enable CORS.
+#####    - Deploy API.
+#####    - Generate SDK for frontend.
+##### 3) Lambda function LF0
+#####    - Receive messages from the frontend user.
+#####    - Direct messages to Dining Chatbot in Lex.
+##### 4) Lex (diningchatbot)
+#####    - Create three intents (GreetingIntent, DiningSuggestionsIntent, ThankYouIntent).
+#####    - Set up user utterances and slots for interaction conversation. 
+#####    - Integrate with Lambda function LF1.
+#####    - Publish the chatbot.
+##### 5) Lambda function LF1
+#####    - Trigger to fulfill the recommendation by sending it to SQS for later processing after the conversation.
