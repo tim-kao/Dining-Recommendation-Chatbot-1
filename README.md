@@ -1,7 +1,7 @@
 # Dining-Recommendation-Chatbot #
 
 ## Overview ##
-Customer Service is a core service for a lot of businesses around the world and it is getting disrupted at the moment by Natural Language Processing-powered applications. The dining Concierge chatbot is a serverless, microservice-driven web application that sends customers restaurant suggestions given a set of preferences that they provide the chatbot with through conversation. 
+Customer Service is a core service for a lot of businesses around the world and it is getting disrupted at the moment by Natural Language Processing-powered applications. The [Dining Concierge Chatbot](https://s3.us-west-2.amazonaws.com/dining-chatbot-a1/chat.html) is a serverless, microservice-driven web application that sends customers restaurant suggestions given a set of preferences that they provide the chatbot with through conversation. 
 
 
 ## Application (Language & Tools) ##
