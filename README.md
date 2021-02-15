@@ -24,6 +24,7 @@
 #####    - Generate SDK from AWS API Gateway and store it into js folder.
 #####    - chat.js file needs modification.
 #####    - Create CORS policy.
+
 #### 2) [API Gateway](https://aws.amazon.com/apigateway/)
 #####    - Create a new API by importing swagger API.
 #####    - Set POST method abd integrate Lambda function LF0 with it.
@@ -31,14 +32,17 @@
 #####    - Enable CORS.
 #####    - Deploy API.
 #####    - Generate SDK for frontend.
+
 #### 3) [Lambda](https://aws.amazon.com/lambda/) - LF0
 #####    - Receive messages from the frontend user.
 #####    - Direct messages to Dining Chatbot in Lex.
+
 #### 4) [Lex](https://aws.amazon.com/lex/)
 #####    - Create a Dining Chatbot with three intents (GreetingIntent, DiningSuggestionsIntent, ThankYouIntent).
 #####    - Set up user utterances and slots for interaction conversation. 
 #####    - Integrate with Lambda function LF1.
 #####    - Publish the chatbot.
+
 #### 5) [Lambda](https://aws.amazon.com/lambda/) - LF1
 #####    - Trigger to fulfill the recommendation by sending it to SQS for later processing after the conversation.
 
