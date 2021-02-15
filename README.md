@@ -3,9 +3,11 @@
 ## Overview
 ##### Customer Service is a core service for a lot of businesses around the world and it is getting disrupted at the moment by Natural Language Processing-powered applications. The dining Concierge chatbot is a serverless, microservice-driven web application that sends customers restaurant suggestions given a set of preferences that they provide the chatbot with through conversation. 
 
+
 ## Application
 ##### 1) Frontend: CSS, HTML, JavaScript
 ##### 2) Backend: AWS Serverless (S3, Lambda, API Gateway, LEX, SQS, SNS, DynamoDB, ElasticSearch), Swagger API, PyThon
+
 
 ## Architecture
 ![image](https://github.com/jyincheng/Dining-Recommendation-Chatbot/blob/main/architecture.png)
@@ -14,6 +16,7 @@
 ##### 3) API -> LF0: LF0 receive message from API.
 ##### 4) LF0 -> Lex: direct user's message to Lex and start the conversation with the Dining Chatbot.
 ##### 5) Lex -> LF1: after the conversation, LF1 will be triggered to send recommendation to users via SQS.
+
 
 ## Description
 #### 1) [S3](https://s3.console.aws.amazon.com/s3/)
@@ -38,6 +41,7 @@
 #####    - Publish the chatbot.
 #### 5) [Lambda](https://s3.console.aws.amazon.com/lambda/) - LF1
 #####    - Trigger to fulfill the recommendation by sending it to SQS for later processing after the conversation.
+
 
 ## Contributor
 #### [Yin Cheng](https://github.com/jyincheng), Tim Kao
