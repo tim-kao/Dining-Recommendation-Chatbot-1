@@ -40,8 +40,6 @@ logger = logging.getLogger()
 
 logger.setLevel(logging.DEBUG)
 
-use_phone = True
-
 """ --- Helpers to build responses which match the structure of the necessary dialog actions --- """
 
 
@@ -164,12 +162,13 @@ def isvalid_date(date):
 
 
 def validate_suggest_restaurant(slot):
-
     diningDay = slot["diningDay"]
 
     location = slot["location"]
 
     phoneNumber = slot["phoneNumber"]
+
+    email = slot["email"]
 
     time = slot["time"]
 
@@ -202,14 +201,14 @@ def validate_suggest_restaurant(slot):
     if cuisine is not None:  # and cuisine.lower() not in cuisines:
 
         if cuisine.lower() not in cuisines:
-
             return build_validation_result(False,
 
-                                       'cuisine',
+                                           'cuisine',
 
-                                       'We do not have {}, would you like a different type of cuisines?'
+                                           'We do not have {}, would you like a different type of cuisines?'
 
-                                       'Our most popular cuisine are caribbean, japanese, italian, chinese, american, mexico, and korean'.format(cuisine))
+                                           'Our most popular cuisine are caribbean, japanese, italian, chinese, american, mexico, and korean'.format(
+                                               cuisine))
 
     if diningDay is not None:
 
@@ -219,7 +218,7 @@ def validate_suggest_restaurant(slot):
 
                                            'I did not understand that, what day would you like to check?')
 
-        elif datetime.datetime.strptime(diningDay, '%Y-%m-%d').date() <= datetime.date.today():
+        elif datetime.datetime.strptime(diningDay, '%Y-%m-%d').date() < datetime.date.today():
 
             return build_validation_result(False, 'diningDay',
 
@@ -235,43 +234,22 @@ def validate_suggest_restaurant(slot):
 
     #                                        'Your number {} is invalid, would you like a different number?'.format(PhoneNumber))
 
-
     if phoneNumber is not None:
 
-        if use_phone:
-            if not phoneNumber.isdigit() or len(phoneNumber) < 9 or len(phoneNumber) > 13:
-                print(phoneNumber, type(phoneNumber))
-                return build_validation_result(False, 'phoneNumber',
+        if not phoneNumber.isdigit() or len(phoneNumber) < 9 or len(phoneNumber) > 13:
+            print(phoneNumber, type(phoneNumber))
+            return build_validation_result(False, 'phoneNumber',
 
-                                               'The phone number entered is not a valid phone number ')
-            """
-            Need to support international phone number. mark below code.
-            phoneNumber = str(phoneNumber)
+                                           'The phone number entered is not a valid phone number '.format(
+                                               phoneNumber))
 
-            if not phoneNumber[0:2] == "+1":
-                return build_validation_result(False, 'phoneNumber', 'The phone number entered does not have the country '
-    
-                                                                     'code or is not a US phone number.  '
-    
-                                                                     'Please enter a US number starting with +1')
+    if email is not None:
 
-            phoneNumber = phoneNumber[2:]
-
-            if not int(phoneNumber) or len(phoneNumber) != 10:
-
-                if not phoneNumber[0:1] == "+1":
-                    return build_validation_result(False, 'phoneNumber',
-
-                                                   'The phone number entered is not a valid phone number '
-    
-                                                   'Please enter a US number starting with +1')
-            """
-        else:
-            if not isinstance(phoneNumber, str) or '@' not in phoneNumber or len(phoneNumber) < 3:
-                return build_validation_result(False,
-                                                'phoneNumber',
-                                                'Your email {} is invalid, would you like a different email?'.format(
-                                                    phoneNumber))
+        if not isinstance(email, str) or '@' not in email or len(email) < 3:
+            return build_validation_result(False,
+                                           'email',
+                                           'Your email {} is invalid, would you like a different email?'.format(
+                                               email))
 
     if time is not None:
 
@@ -304,8 +282,8 @@ def validate_suggest_restaurant(slot):
 
                                            'ppl',
 
-                                           'Your number {} is invalid, would you like a different number of people?'.format(ppl))
-
+                                           'Your number {} is invalid, would you like a different number of people?'.format(
+                                               ppl))
 
     return build_validation_result(True, None, None)
 
@@ -352,8 +330,8 @@ def validate_order_flowers(flower_type, date, pickup_time):
 
             return build_validation_result(False, 'PickupTime', None)
 
-        #if hour < 10 or hour > 16:
-            # Outside of business hours
+        # if hour < 10 or hour > 16:
+        # Outside of business hours
 
         #   return build_validation_result(False, 'PickupTime',
         #                                   'Our business hours are from ten a m. to five p m. Can you specify a time during this range?')
@@ -405,6 +383,7 @@ def suggest_restaurant(intent_request):
         return delegate(output_session_attributes, get_slots(intent_request))
 
         # Send Message to SQS Here
+    print(slot)
 
     sqs_response = message_sender(slot)
 
@@ -449,6 +428,10 @@ def message_sender(slot):
                 'phoneNumber': {
                     'DataType': 'String',
                     'StringValue': slot['phoneNumber']
+                },
+                'email': {
+                    'DataType': 'String',
+                    'StringValue': slot['email']
                 },
                 'ppl': {
                     'DataType': 'String',
