@@ -48,5 +48,17 @@ Customer Service is a core service for a lot of businesses around the world and 
 
 #### 6) AWS Region: US-east-1 (N. Virginia)
 
+#### 7) [Simple Queue Servive]
+- FIFO type.
+
+#### 8) [ElasticSearch]
+- 7000+ Yelp API cuisines data.
+- Store restaurants Key ID and cuisine types.
+
+#### 8) [DynamoDB]
+- 7000+ Yelp API cuisines data.
+- Key: restaurant ID and insertedAtTimestamp.
+- Data columns: Business ID, Name, Address, Coordinates, Number of Reviews, Rating, Zip Code, and Phone number.
+
 ## Contributor ##
-#### [Yin Cheng](https://github.com/jyincheng)(UNI: cc4717), [Tim Kao](https://github.com/tim-kao?fbclid=IwAR0lWAvmWe03EtuderoHdKEpYYG8pnl2ca1bN1b5DBfEMP-wFv4kQupl-Jg) (UNI: sk4920)
+#### [Yin Cheng](https://github.com/jyincheng)(UNI: cc4717), [Tim Kao](https://github.com/tim-kao) (UNI: sk4920)
