@@ -49,4 +49,4 @@ Customer Service is a core service for a lot of businesses around the world and 
 #### 6) AWS Region: US-east-1 (N. Virginia)
 
 ## Contributor ##
-#### [Yin Cheng](https://github.com/jyincheng), Tim Kao
+#### [Yin Cheng](https://github.com/jyincheng)-cc4717, Tim Kao-
