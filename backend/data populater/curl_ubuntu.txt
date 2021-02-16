@@ -1,0 +1,6 @@
+
+Create
+curl -X POST https://search-restaurants-mzwl7jz5j43kesh6unvvvouizu.us-east-1.es.amazonaws.com/_bulk  -H "Content-Type: application/json"  -u "tim":"Windows2020;" --data-binary "@data3.json"
+
+Delete
+curl -XDELETE  https://search-restaurants-mzwl7jz5j43kesh6unvvvouizu.us-east-1.es.amazonaws.com/test  -H "Content-Type: application/json"  -u "tim":"Windows2020;"
