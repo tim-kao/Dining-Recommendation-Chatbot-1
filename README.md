@@ -39,7 +39,7 @@ Customer Service is a core service for a lot of businesses around the world and 
 
 #### 4) [Lex](https://aws.amazon.com/lex/)
 - Create a Dining Chatbot with three intents (GreetingIntent, DiningSuggestionsIntent, ThankYouIntent).
-- Set up user utterances and slots for interaction conversation. 
+- Set up user utterances and slots in each intents for interaction conversation. 
 - Integrate with Lambda function LF1.
 - Publish the chatbot.
 
