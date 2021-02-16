@@ -27,8 +27,8 @@ Customer Service is a core service for a lot of businesses around the world and 
 
 #### 2) [API Gateway](https://aws.amazon.com/apigateway/)
 - Create a new API by importing swagger API.
-- Set POST method abd integrate Lambda function LF0 with it.
-- Set OPTIONS method with HTTP status 200.
+- Set POST method and integrate Lambda function LF0 with it.
+- Set OPTIONS method and its response method with HTTP status 200.
 - Enable CORS.
 - Deploy API.
 - Generate SDK for frontend.
@@ -46,6 +46,7 @@ Customer Service is a core service for a lot of businesses around the world and 
 #### 5) [Lambda](https://aws.amazon.com/lambda/) - LF1
 - Trigger to fulfill the recommendation by sending it to SQS for later processing after the conversation.
 
+#### 6) AWS Region: US-east-1 (N. Virginia)
 
 ## Contributor ##
 #### [Yin Cheng](https://github.com/jyincheng), Tim Kao
