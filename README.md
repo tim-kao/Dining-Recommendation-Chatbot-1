@@ -50,7 +50,7 @@ Customer Service is a core service for a lot of businesses around the world and 
 
 
 
-* AWS Region: US-east-1 (N. Virginia)
+*AWS Region: US-east-1 (N. Virginia)
 
 
 ## Contributor ##
